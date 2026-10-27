@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#e11d2e">
+  <meta name="description" content="LAVA GAME STORE - نموذج متجر شحن الألعاب">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <title>LAVA GAME STORE</title>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="Lava Game Store">
+      <span class="brand-mark">L</span><span><b>LAVA</b><small>GAME STORE</small></span>
+    </a>
+    <button id="installBtn" class="install-btn" hidden>تثبيت التطبيق</button>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-tag"><span class="live-dot"></span> متجر الألعاب ديالك</div>
+      <h1>شحن ألعابك.<br><span>بسرعة وبسهولة.</span></h1>
+      <p>اختار اللعبة والباقة، دخل Player ID، وقدّم الطلب ديالك.</p>
+      <a class="primary-btn" href="#games">شوف الألعاب <span>←</span></a>
+      <div class="hero-orb orb-one"></div><div class="hero-orb orb-two"></div>
+    </section>
+
+    <section class="section" id="games">
+      <div class="section-head"><div><p class="eyebrow">GAME LIBRARY</p><h2>اختار اللعبة</h2></div><span class="count">06 ألعاب</span></div>
+      <div class="game-grid" id="gameGrid"></div>
+    </section>
+
+    <section class="section order-section" id="orderSection">
+      <div class="section-head"><div><p class="eyebrow">NEW ORDER</p><h2>طلب الشحن</h2></div><span class="step">01 / 03</span></div>
+      <form id="orderForm" class="order-card">
+        <label for="game">اللعبة</label>
+        <select id="game" required></select>
+        <label for="playerId">Player ID / UID</label>
+        <input id="playerId" name="playerId" required minlength="3" maxlength="80" placeholder="دخل الـ ID ديالك فقط" autocomplete="off">
+        <p class="hint">ما تدخلش كلمة السر ولا كود التحقق ديالك.</p>
+        <label for="package">الباقة</label>
+        <select id="package" required></select>
+        <div class="price-row"><span>الثمن التجريبي</span><strong id="price">—</strong></div>
+        <button class="primary-btn full" type="submit">إنشاء طلب تجريبي <span>←</span></button>
+        <p class="notice">نسخة تجريبية: ما كاين لا أداء حقيقي لا شحن حقيقي حتى تربط مزوّد معتمد.</p>
+      </form>
+    </section>
+
+    <section class="section">
+      <div class="section-head"><div><p class="eyebrow">ORDER TRACKING</p><h2>تتبّع الطلب</h2></div></div>
+      <div class="tracking-card">
+        <label for="orderSearch">رقم الطلب</label>
+        <div class="tracking-row"><input id="orderSearch" placeholder="مثال: LAVA-123456"><button id="trackBtn" class="secondary-btn">تتبّع</button></div>
+        <div id="trackingResult" class="tracking-result" aria-live="polite">الطلبات التجريبية كتتحفظ غير فهاد الجهاز.</div>
+      </div>
+    </section>
+
+    <section class="section faq">
+      <h2>قبل ما تطلب</h2>
+      <p>هاد الموقع نموذج أولي للتجربة. الأثمنة والباقات فيه افتراضية، وما كاينش شحن تلقائي فعلي حتى يتم إعداد API ديال مزوّد معتمد لكل لعبة.</p>
+    </section>
+  </main>
+
+  <footer><div class="brand footer-brand"><span class="brand-mark">L</span><span><b>LAVA</b><small>GAME STORE</small></span></div><p>© <span id="year"></span> LAVA GAME STORE · نموذج تجريبي</p></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
